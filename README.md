@@ -21,7 +21,7 @@ Stock macOS Preview loads slowly on large folders. Third-party viewers pull in E
 
 ## Install
 
-### Homebrew (recommended)
+### Homebrew (I setup my mac with Brew and I trust myself)
 
 ```bash
 brew tap rayone/tap
