@@ -1,6 +1,6 @@
 # viewR
 
-A native macOS image viewer built from scratch with AppKit and Swift concurrency. Opens an image, enumerates every image in the same directory, and lets you navigate with arrow keys. Designed to handle folders with 10,000+ images without stutter.
+A native macOS image viewer built from scratch with AppKit and Swift concurrency. Opens an image, enumerates every image in the same directory, and lets you navigate with arrow keys. Designed to handle folders with 10,000+ images without stutter. I archtected the app, and a combination of Gemini Pro, Claude Opus and ChatGPT coded it. 
 
 ## Why viewR exists
 
@@ -38,6 +38,7 @@ viewR is free and open-source software. It is **not signed with an Apple Develop
 - Apple charges $99/year for a Developer ID certificate. This is a personal open-source project with no revenue.
 - Code signing and notarization are mechanisms Apple uses to maintain control over what software can run on macOS. They do not inherently make software safer — they make software *approved by Apple*.
 - You can read every line of source code in this repository. You can build it yourself. That is stronger assurance than any certificate.
+- You can get your favorite AI to perform a code review.
 
 ### Bypassing Gatekeeper
 
