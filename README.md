@@ -21,22 +21,22 @@ Stock macOS Preview loads slowly on large folders. Third-party viewers pull in E
 
 ## Install
 
-### Option A: Download the DMG
-
-1. Go to [Releases](../../releases) and download `viewR.dmg`.
-2. Open the DMG. Drag `viewR.app` into the `Applications` folder (the shortcut is inside the DMG).
-3. **Important — see [Security](#security) below.**
-
-### Option B: Homebrew
+### Homebrew (recommended)
 
 ```bash
 brew tap rayone/tap
 brew install --cask viewr
 ```
 
-This downloads the DMG, installs `viewR.app` into `/Applications`, and removes the quarantine attribute automatically.
+This downloads the DMG, installs `viewR.app` into `/Applications`, and removes the quarantine attribute automatically — no manual Gatekeeper bypass needed.
 
-### Option C: Build from source
+### Manual download
+
+1. Go to [Releases](../../releases) and download `viewR.dmg`.
+2. Open the DMG. Drag `viewR.app` into the `Applications` folder (the shortcut is inside the DMG).
+3. **Important — see [Security](#security) below.**
+
+### Build from source
 
 See [Building from source](#building-from-source) below.
 
