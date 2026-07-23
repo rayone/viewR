@@ -1,0 +1,35 @@
+/* Placeholder for French localized strings */
+"NO_IMAGES_FOUND" = "Aucune image trouvée dans ce répertoire.";
+"DIRECTORY_READ_ERROR" = "Échec de la lecture du répertoire.";
+
+/* NavigationController */
+"DELETE_MESSAGE" = "Supprimer « %@ » ?";
+"DELETE_INFORMATIVE" = "L'image sera placée dans la corbeille.";
+"DELETE_BUTTON" = "Supprimer";
+"CANCEL_BUTTON" = "Annuler";
+"WINDOW_TITLE_FORMAT" = "%@ — %@ / %@";
+
+/* SettingsWindow */
+"SETTINGS_TITLE" = "Réglages %@";
+"GENERAL_TAB" = "Général";
+"HOTKEYS_TAB" = "Raccourcis";
+"RESET_DEFAULTS_BUTTON" = "Rétablir les réglages par défaut";
+"NAVIGATION_SPEED_SECTION" = "VITESSE DE NAVIGATION";
+"FAST" = "Rapide";
+"SLOW" = "Lente";
+"CACHE_BUFFER_SECTION" = "TAMPON DE CACHE";
+"FEW" = "Peu";
+"MANY" = "Beaucoup";
+"BEHAVIOR_SECTION" = "COMPORTEMENT";
+"CONFIRM_DELETE" = "Confirmer avant la suppression";
+"SAVE_CHANGES" = "Enregistrer les modifications dans les fichiers";
+"SHOW_TITLEBAR" = "Afficher les infos et commandes de la barre de titre";
+"SPEED_MAX" = "Vitesse maximale — chaque répétition de touche navigue";
+"SPEED_FAST" = "Rapide — toutes les %d répétitions de touche";
+"SPEED_MEDIUM" = "Moyenne — toutes les %d répétitions de touche";
+"SPEED_SLOW" = "Lente — toutes les %d répétitions de touche";
+"CACHE_SIZE_LABEL" = "Mettre %d images en cache";
+"HEADER_ACTION" = "ACTION";
+"HEADER_SHORTCUT" = "RACCOURCI";
+"REPLACED_CONFLICT" = "%@ remplacé";
+"PRESS_KEY" = "Appuyez sur une touche…";

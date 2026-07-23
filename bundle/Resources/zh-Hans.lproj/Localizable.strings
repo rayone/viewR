@@ -1,0 +1,35 @@
+/* Placeholder for Mandarin (Simplified) localized strings */
+"NO_IMAGES_FOUND" = "此目录中未找到图像。";
+"DIRECTORY_READ_ERROR" = "无法读取目录。";
+
+/* NavigationController */
+"DELETE_MESSAGE" = "删除“%@”？";
+"DELETE_INFORMATIVE" = "该图像将被移至废纸篓。";
+"DELETE_BUTTON" = "删除";
+"CANCEL_BUTTON" = "取消";
+"WINDOW_TITLE_FORMAT" = "%@ — %@ / %@";
+
+/* SettingsWindow */
+"SETTINGS_TITLE" = "%@ 设置";
+"GENERAL_TAB" = "常规";
+"HOTKEYS_TAB" = "热键";
+"RESET_DEFAULTS_BUTTON" = "恢复默认设置";
+"NAVIGATION_SPEED_SECTION" = "导航速度";
+"FAST" = "快";
+"SLOW" = "慢";
+"CACHE_BUFFER_SECTION" = "缓存缓冲区";
+"FEW" = "少";
+"MANY" = "多";
+"BEHAVIOR_SECTION" = "行为";
+"CONFIRM_DELETE" = "删除前确认";
+"SAVE_CHANGES" = "保存对文件的更改";
+"SHOW_TITLEBAR" = "显示标题栏信息和控件";
+"SPEED_MAX" = "最高速度 — 每次按键重复都会导航";
+"SPEED_FAST" = "快 — 每 %d 次按键重复";
+"SPEED_MEDIUM" = "中等 — 每 %d 次按键重复";
+"SPEED_SLOW" = "慢 — 每 %d 次按键重复";
+"CACHE_SIZE_LABEL" = "缓存 %d 张图像";
+"HEADER_ACTION" = "操作";
+"HEADER_SHORTCUT" = "快捷键";
+"REPLACED_CONFLICT" = "已替换 %@";
+"PRESS_KEY" = "请按键…";

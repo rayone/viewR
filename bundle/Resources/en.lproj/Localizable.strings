@@ -1,0 +1,35 @@
+/* Placeholder for English localized strings */
+"NO_IMAGES_FOUND" = "No images found in this directory.";
+"DIRECTORY_READ_ERROR" = "Failed to read directory.";
+
+/* NavigationController */
+"DELETE_MESSAGE" = "Delete \"%@\"?";
+"DELETE_INFORMATIVE" = "The image will be moved to the Trash.";
+"DELETE_BUTTON" = "Delete";
+"CANCEL_BUTTON" = "Cancel";
+"WINDOW_TITLE_FORMAT" = "%@ — %@ / %@";
+
+/* SettingsWindow */
+"SETTINGS_TITLE" = "%@ Settings";
+"GENERAL_TAB" = "General";
+"HOTKEYS_TAB" = "Hotkeys";
+"RESET_DEFAULTS_BUTTON" = "Reset to Defaults";
+"NAVIGATION_SPEED_SECTION" = "NAVIGATION SPEED";
+"FAST" = "Fast";
+"SLOW" = "Slow";
+"CACHE_BUFFER_SECTION" = "CACHE BUFFER";
+"FEW" = "Few";
+"MANY" = "Many";
+"BEHAVIOR_SECTION" = "BEHAVIOR";
+"CONFIRM_DELETE" = "Confirm before deleting";
+"SAVE_CHANGES" = "Save changes to files";
+"SHOW_TITLEBAR" = "Show titlebar info and controls";
+"SPEED_MAX" = "Maximum speed — every key repeat navigates";
+"SPEED_FAST" = "Fast — every %d key repeats";
+"SPEED_MEDIUM" = "Medium — every %d key repeats";
+"SPEED_SLOW" = "Slow — every %d key repeats";
+"CACHE_SIZE_LABEL" = "Cache %d images";
+"HEADER_ACTION" = "ACTION";
+"HEADER_SHORTCUT" = "SHORTCUT";
+"REPLACED_CONFLICT" = "Replaced %@";
+"PRESS_KEY" = "Press key…";

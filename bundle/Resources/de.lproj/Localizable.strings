@@ -1,0 +1,35 @@
+/* Placeholder for German localized strings */
+"NO_IMAGES_FOUND" = "Keine Bilder in diesem Verzeichnis gefunden.";
+"DIRECTORY_READ_ERROR" = "Verzeichnis konnte nicht gelesen werden.";
+
+/* NavigationController */
+"DELETE_MESSAGE" = "„%@“ löschen?";
+"DELETE_INFORMATIVE" = "Das Bild wird in den Papierkorb bewegt.";
+"DELETE_BUTTON" = "Löschen";
+"CANCEL_BUTTON" = "Abbrechen";
+"WINDOW_TITLE_FORMAT" = "%@ — %@ / %@";
+
+/* SettingsWindow */
+"SETTINGS_TITLE" = "%@ Einstellungen";
+"GENERAL_TAB" = "Allgemein";
+"HOTKEYS_TAB" = "Tastaturkurzbefehle";
+"RESET_DEFAULTS_BUTTON" = "Auf Standard zurücksetzen";
+"NAVIGATION_SPEED_SECTION" = "NAVIGATIONSGESCHWINDIGKEIT";
+"FAST" = "Schnell";
+"SLOW" = "Langsam";
+"CACHE_BUFFER_SECTION" = "CACHE-PUFFER";
+"FEW" = "Wenige";
+"MANY" = "Viele";
+"BEHAVIOR_SECTION" = "VERHALTEN";
+"CONFIRM_DELETE" = "Vor dem Löschen bestätigen";
+"SAVE_CHANGES" = "Änderungen an Dateien speichern";
+"SHOW_TITLEBAR" = "Titelleisten-Infos und -Steuerungen anzeigen";
+"SPEED_MAX" = "Maximale Geschwindigkeit — jede Tastenwiederholung navigiert";
+"SPEED_FAST" = "Schnell — jede %d. Tastenwiederholung";
+"SPEED_MEDIUM" = "Mittel — jede %d. Tastenwiederholung";
+"SPEED_SLOW" = "Langsam — jede %d. Tastenwiederholung";
+"CACHE_SIZE_LABEL" = "%d Bilder zwischenspeichern";
+"HEADER_ACTION" = "AKTION";
+"HEADER_SHORTCUT" = "KURZBEFEHL";
+"REPLACED_CONFLICT" = "%@ ersetzt";
+"PRESS_KEY" = "Taste drücken…";

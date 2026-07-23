@@ -1,0 +1,16 @@
+.build/
+.build_number
+*.xcodeproj/
+*.xcworkspace/
+DerivedData/
+.DS_Store
+*.swp
+*~
+prior art/
+tests/
+test_*.swift
+/icon*.png
+openspec/
+.opencode/
+AGENTS.md
+

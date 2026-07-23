@@ -1,0 +1,35 @@
+/* Placeholder for Japanese localized strings */
+"NO_IMAGES_FOUND" = "このディレクトリに画像が見つかりません。";
+"DIRECTORY_READ_ERROR" = "ディレクトリの読み込みに失敗しました。";
+
+/* NavigationController */
+"DELETE_MESSAGE" = "「%@」を削除しますか？";
+"DELETE_INFORMATIVE" = "画像はゴミ箱に移動されます。";
+"DELETE_BUTTON" = "削除";
+"CANCEL_BUTTON" = "キャンセル";
+"WINDOW_TITLE_FORMAT" = "%@ — %@ / %@";
+
+/* SettingsWindow */
+"SETTINGS_TITLE" = "%@ 設定";
+"GENERAL_TAB" = "一般";
+"HOTKEYS_TAB" = "ホットキー";
+"RESET_DEFAULTS_BUTTON" = "デフォルトに戻す";
+"NAVIGATION_SPEED_SECTION" = "ナビゲーション速度";
+"FAST" = "速い";
+"SLOW" = "遅い";
+"CACHE_BUFFER_SECTION" = "キャッシュバッファ";
+"FEW" = "少ない";
+"MANY" = "多い";
+"BEHAVIOR_SECTION" = "動作";
+"CONFIRM_DELETE" = "削除前に確認する";
+"SAVE_CHANGES" = "ファイルへの変更を保存する";
+"SHOW_TITLEBAR" = "タイトルバーの情報とコントロールを表示する";
+"SPEED_MAX" = "最高速度 — キーを押し続けると常に移動します";
+"SPEED_FAST" = "速い — %d キーリピートごと";
+"SPEED_MEDIUM" = "中 — %d キーリピートごと";
+"SPEED_SLOW" = "遅い — %d キーリピートごと";
+"CACHE_SIZE_LABEL" = "%d 枚の画像をキャッシュ";
+"HEADER_ACTION" = "アクション";
+"HEADER_SHORTCUT" = "ショートカット";
+"REPLACED_CONFLICT" = "%@ を置き換えました";
+"PRESS_KEY" = "キーを押してください…";
