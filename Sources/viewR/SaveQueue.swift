@@ -3,7 +3,7 @@ import Foundation
 import ImageIO
 import os
 
-private let log = Logger(subsystem: "r1.vr", category: "cache")
+private let log = Logger(subsystem: "viewR", category: "cache")
 
 // MARK: - PendingChange
 
@@ -25,7 +25,7 @@ final class SaveQueue {
 
     // MARK: - Private
 
-    private let queue = DispatchQueue(label: "r1.vr.save-queue", qos: .utility)
+    private let queue = DispatchQueue(label: "viewR.save-queue", qos: .utility)
     private var pending: [URL: PendingChange] = [:]
     private let lock = OSAllocatedUnfairLock(uncheckedState: ())
 
@@ -223,9 +223,13 @@ final class SaveQueue {
                 return nil
             }
 
-            // Write data directly to the original file path
+            // Write data directly — no .atomic to avoid macOS creating
+            // "A Document Being Saved By" temp folders.
             do {
-                try (data as Data).write(to: url, options: .atomic)
+                let handle = try FileHandle(forWritingTo: url)
+                try handle.truncate(atOffset: 0)
+                handle.write(data as Data)
+                try handle.close()
 
                 // Restore original timestamps so rotation doesn't change sort order
                 var attrs: [FileAttributeKey: Any] = [:]
