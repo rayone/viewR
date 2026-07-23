@@ -25,6 +25,7 @@ Stock macOS Preview loads slowly on large folders. Third-party viewers pull in E
 
 ```bash
 brew tap rayone/tap
+brew trust rayone/tap
 brew install --cask viewr
 ```
 
