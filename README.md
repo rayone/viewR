@@ -11,7 +11,7 @@ Stock macOS Preview loads slowly on large folders. Third-party viewers pull in E
 - **Pure AppKit.** No SwiftUI, no Catalyst, no Electron, no web views. One native window.
 - **Parallel decode pipeline.** A GCD concurrent queue decodes images ahead of your navigation on background threads. The main thread never blocks on image I/O.
 - **Two-tier cache.** Screen-resolution and full-resolution variants are cached independently with an adaptive memory budget (25% of system RAM, capped at 2 GB).
-- **Sliding window preload.** Approximately 5 images behind and 12 ahead are decoded in advance. Navigation feels instant.
+- **Sliding window preload.** Up to 400 images cached (configurable), split 25% behind and 75% ahead. Navigation feels instant.
 - **Natural filename sort.** `img9` comes before `img10`.
 - **Appearance-aware dock icon.** Automatically switches between light and dark variants based on your system theme.
 - **Open files or folders.** Select a single image (viewR finds its siblings) or open an entire directory.
