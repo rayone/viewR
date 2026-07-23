@@ -162,7 +162,8 @@ open /Applications/viewR.app
 | Cmd+O | Open file or folder |
 | Cmd+Delete | Move to Trash |
 | R / Cmd+R | Rotate clockwise |
-| Z / double-click | Toggle zoom |
+| Touchpad Pinch | Zoom |
+| Z / double-click | Toggle zoom (Fill, Native, Fit)|
 | I | Toggle info overlay |
 | Cmd+, | Settings |
 
