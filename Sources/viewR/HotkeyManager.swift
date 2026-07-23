@@ -3,7 +3,7 @@ import Carbon.HIToolbox
 import Foundation
 import os.log
 
-private let log = Logger(subsystem: "r1.vr", category: "ui")
+private let log = Logger(subsystem: "viewR", category: "ui")
 
 // MARK: - HotkeyAction
 

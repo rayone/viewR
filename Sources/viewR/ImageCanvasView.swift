@@ -3,7 +3,7 @@ import Metal
 import QuartzCore
 import os.log
 
-private let log = Logger(subsystem: "r1.vr", category: "ui")
+private let log = Logger(subsystem: "viewR", category: "ui")
 
 enum ZoomMode {
     case fit
@@ -88,7 +88,7 @@ final class ImageCanvasView: NSView {
         let hudH: CGFloat = 72
         let w = min(maxW, bounds.width - margin * 2)
         infoHUD.frame = NSRect(x: margin, y: margin, width: w, height: hudH)
-        
+
         // Update image layer frame on resize
         renderCurrentState()
     }
@@ -164,12 +164,12 @@ final class ImageCanvasView: NSView {
         let imgW = CGFloat(image.width)
         let imgH = CGFloat(image.height)
         let backingScale = window?.backingScaleFactor ?? NSScreen.main?.backingScaleFactor ?? 2.0
-        
+
         // 1. Determine bounding box of the image after rotation
         let isRotated = (totalRotationSteps % 4 == 1) || (totalRotationSteps % 4 == 3)
         let boundingW = isRotated ? imgH : imgW
         let boundingH = isRotated ? imgW : imgH
-        
+
         // 2. Calculate aspect-preserving scale factor to fit/fill the bounds or 1.0 for native
         let baseScale: CGFloat
         switch zoomMode {
@@ -183,28 +183,28 @@ final class ImageCanvasView: NSView {
 
         // 3. Apply pinch zoom on top of the base scale
         let scale = baseScale * pinchScale
-        
+
         // 4. Size of the image drawn on screen (unrotated)
         let drawW = imgW * scale
         let drawH = imgH * scale
-        
+
         // 5. Setup graphics context transforms
         ctx.saveGState()
-        
+
         // High quality interpolation
         ctx.interpolationQuality = .high
-        
+
         // Move origin to center of view, applying scroll offset
         ctx.translateBy(x: bounds.midX + scrollOffset.x, y: bounds.midY + scrollOffset.y)
-        
+
         // Apply rotation (-pi/2 for clockwise steps in CoreGraphics)
         let angle = -CGFloat(totalRotationSteps) * .pi / 2.0
         ctx.rotate(by: angle)
-        
+
         // Draw the image centered around the origin
         let drawRect = CGRect(x: -drawW / 2, y: -drawH / 2, width: drawW, height: drawH)
         ctx.draw(image, in: drawRect)
-        
+
         ctx.restoreGState()
     }
 
@@ -278,7 +278,7 @@ final class ImageCanvasView: NSView {
         case .fill:   zoomMode = .native
         case .native: zoomMode = .fit
         }
-        
+
         let modeStr: String
         switch zoomMode {
         case .fit:    modeStr = "fit"

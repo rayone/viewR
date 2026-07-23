@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
     <key>CFBundleIdentifier</key>
-    <string>r1.vr</string>
+    <string>viewR</string>
     <key>CFBundleName</key>
     <string>viewR</string>
     <key>CFBundleDisplayName</key>

@@ -3,7 +3,7 @@ import ImageIO
 import UniformTypeIdentifiers
 import os.log
 
-private let log = Logger(subsystem: "r1.vr", category: "ui")
+private let log = Logger(subsystem: "viewR", category: "ui")
 
 /// Metadata overlay shown over the image canvas when the user presses I.
 @MainActor
@@ -111,36 +111,36 @@ final class InfoHUD: NSView {
 
     func update(url: URL) {
         filenameLabel.stringValue = url.lastPathComponent
-        
+
         // Load EXIF and file metadata asynchronously to keep UI completely fluid
         Task {
             let metadata = await parseMetadata(url: url)
-            
+
             filenameLabel.stringValue = url.lastPathComponent
             dimensionsLabel.stringValue = metadata.dimensions
-            
+
             if let camera = metadata.camera {
                 cameraLabel.stringValue = camera
                 cameraLabel.isHidden = false
             } else {
                 cameraLabel.isHidden = true
             }
-            
+
             if let exposure = metadata.exposure {
                 exposureLabel.stringValue = exposure
                 exposureLabel.isHidden = false
             } else {
                 exposureLabel.isHidden = true
             }
-            
+
             fileInfoLabel.stringValue = "\(metadata.sizeStr)  •  \(metadata.dateStr)"
-            
+
             // Adjust frame height based on visible subviews
             if self.superview != nil {
                 var height: CGFloat = 84 // base height for 3 rows
                 if !cameraLabel.isHidden { height += 15 }
                 if !exposureLabel.isHidden { height += 15 }
-                
+
                 var frame = self.frame
                 frame.size.height = height
                 self.frame = frame

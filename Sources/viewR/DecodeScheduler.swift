@@ -20,7 +20,7 @@ struct DecodeRequest: Comparable {
 
 final class DecodeScheduler {
     private let queue = DispatchQueue(
-        label: "r1.vr.decode",
+        label: "viewR.decode",
         qos: .userInitiated,
         attributes: .concurrent
     )
@@ -36,7 +36,7 @@ final class DecodeScheduler {
 
     private weak var cache: ImageCache?
     private var imageFiles: [URL] = []
-    
+
     // Notification callback for when a decode finishes for the current visible image
     var onImageDecoded: ((Int, CGImage, DecodeQuality) -> Void)?
 
@@ -110,7 +110,7 @@ final class DecodeScheduler {
     func scheduleFullRes(currentIndex: Int) {
         lock.lock()
         self.currentIndex = currentIndex
-        
+
         if cache?.get(index: currentIndex)?.fullRes == nil {
             pendingRequests.append(DecodeRequest(
                 index: currentIndex,
@@ -120,7 +120,7 @@ final class DecodeScheduler {
             pendingRequests.sort()
             let shouldProcess = activeDecodesCount < maxConcurrent
             lock.unlock()
-            
+
             if shouldProcess {
                 processQueue()
             }
@@ -134,21 +134,21 @@ final class DecodeScheduler {
         while !pendingRequests.isEmpty && activeDecodesCount < maxConcurrent {
             let request = pendingRequests.removeFirst()
             activeDecodesCount += 1
-            
+
             lock.unlock()
-            
+
             decodeImage(request: request) { [weak self] in
                 guard let self = self else { return }
                 self.lock.lock()
                 self.activeDecodesCount -= 1
                 let shouldProcessMore = !self.pendingRequests.isEmpty && self.activeDecodesCount < self.maxConcurrent
                 self.lock.unlock()
-                
+
                 if shouldProcessMore {
                     self.processQueue()
                 }
             }
-            
+
             lock.lock()
         }
         lock.unlock()
@@ -170,14 +170,14 @@ final class DecodeScheduler {
                     completion()
                     return
                 }
-                
+
                 // Fast-fail if the request is now too far outside the sliding window
                 self.lock.lock()
                 let targetIndex = request.index
                 let current = self.currentIndex
                 let totalForStale = self.imageFiles.count
                 self.lock.unlock()
-                
+
                 // If it's a full-res request, only decode it if we're STILL ON that index.
                 // If it's a screen-res request, only decode if it's within the +/- window.
                 let isStale: Bool
@@ -191,12 +191,12 @@ final class DecodeScheduler {
                 } else {
                     isStale = true
                 }
-                
+
                 if isStale {
                     completion()
                     return
                 }
-                
+
                 guard let cache = self.cache,
                       let source = CGImageSourceCreateWithURL(url as CFURL, nil)
                 else {
@@ -227,13 +227,13 @@ final class DecodeScheduler {
                     completion()
                     return
                 }
-                
+
                 // Check staleness one last time before pushing to main thread
                 self.lock.lock()
                 let currentFinal = self.currentIndex
                 let totalFiles = self.imageFiles.count
                 self.lock.unlock()
-                
+
                 let isStaleFinal: Bool
                 if request.quality == .fullRes {
                     isStaleFinal = targetIndex != currentFinal
@@ -244,7 +244,7 @@ final class DecodeScheduler {
                 } else {
                     isStaleFinal = true
                 }
-                
+
                 if isStaleFinal {
                     completion()
                     return

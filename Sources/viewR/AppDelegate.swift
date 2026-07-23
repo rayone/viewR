@@ -2,7 +2,7 @@ import AppKit
 import CoreServices
 import os.log
 
-private let log = Logger(subsystem: "r1.vr", category: "ui")
+private let log = Logger(subsystem: "viewR", category: "ui")
 
 // AppDelegate is created in main.swift (top-level, no actor context).
 // NSApplicationDelegate callbacks are guaranteed by AppKit to run on the main thread.
@@ -59,7 +59,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     // MARK: - Default handler registration
 
     private func registerAsDefaultImageViewer() {
-        let bundleID = Bundle.main.bundleIdentifier ?? "r1.vr"
+        let bundleID = Bundle.main.bundleIdentifier ?? "viewR"
         let utis: [String] = [
             "public.image",
             "public.jpeg",

@@ -3,7 +3,7 @@ import ImageIO
 import UniformTypeIdentifiers
 import os.log
 
-private let log = Logger(subsystem: "r1.vr", category: "ui")
+private let log = Logger(subsystem: "viewR", category: "ui")
 
 /// Coordinates directory scanning, decode scheduler, and window display.
 /// Navigation is cache-read-only — synchronous decode eliminated for maximum responsiveness.
@@ -48,7 +48,7 @@ final class NavigationController {
         self.hotkeyManager = hotkeyManager
         self.cache = ImageCache(maxItems: hotkeyManager.cacheBudgetImages)
         self.scheduler = DecodeScheduler(cache: cache, cacheCapacity: hotkeyManager.cacheBudgetImages)
-        
+
         self.scheduler.onImageDecoded = { [weak self] index, image, quality in
             Task { @MainActor [weak self] in
                 self?.onDecodeComplete(index: index, image: image, quality: quality)
@@ -319,7 +319,7 @@ final class NavigationController {
 
         // 2. Queue the deletion to happen in the background
         saveQueue.record(url: url, change: .delete)
-        
+
         // 3. Force the flush so it happens right away
         saveQueue.flush()
     }
@@ -550,14 +550,14 @@ final class NavigationController {
 
     private func handleFilesUpdated(_ newFiles: ContiguousArray<URL>) {
         let previousURL = files.isEmpty ? nil : files[currentIndex]
-        
+
         // Filter out files that we are currently deleting
         let filteredFiles = ContiguousArray(newFiles.filter { !pendingDeletedURLs.contains($0) })
-        
-        // If the count is exactly what we expect (e.g. we just deleted an image and 
+
+        // If the count is exactly what we expect (e.g. we just deleted an image and
         // the scanner is just now catching up), don't jump around.
         let isExpectedScannerCatchup = filteredFiles.count == files.count
-        
+
         files = filteredFiles
 
         if !isExpectedScannerCatchup, let prev = previousURL, let newIdx = filteredFiles.firstIndex(of: prev) {

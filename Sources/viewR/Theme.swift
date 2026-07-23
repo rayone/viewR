@@ -1,7 +1,7 @@
 import AppKit
 import os.log
 
-private let log = Logger(subsystem: "r1.vr", category: "ui")
+private let log = Logger(subsystem: "viewR", category: "ui")
 
 // MARK: - Theme
 
@@ -90,7 +90,7 @@ struct Theme {
 final class ThemeManager {
 
     static let shared = ThemeManager()
-    static let didChangeNotification = Notification.Name("r1.vr.themeDidChange")
+    static let didChangeNotification = Notification.Name("viewR.themeDidChange")
 
     private(set) var current: Theme
 

@@ -4,7 +4,7 @@ import ImageIO
 import UniformTypeIdentifiers
 import os
 
-private let log = Logger(subsystem: "r1.vr", category: "scanner")
+private let log = Logger(subsystem: "viewR", category: "scanner")
 
 /// Async actor that enumerates and sorts image files in a directory.
 /// Monitors for changes via FSEventStream with Task-based debouncing.
