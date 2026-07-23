@@ -4,13 +4,15 @@ A native macOS image viewer built from scratch with AppKit and Swift concurrency
 
 ## Why viewR exists
 
+<img width="1046" height="1046" alt="icon dark" src="https://github.com/user-attachments/assets/bd2dceaf-8b26-499a-863a-14b498986ff5" />
+
 Stock macOS Preview loads slowly on large folders. Third-party viewers pull in Electron or cross-platform frameworks and consume hundreds of megabytes of RAM for what should be a simple task. viewR is a single-purpose tool: view images fast, navigate instantly, stay out of the way.
 
 ## Features
 
 - **Pure AppKit.** No SwiftUI, no Catalyst, no Electron, no web views. One native window.
 - **Parallel decode pipeline.** A GCD concurrent queue decodes images ahead of your navigation on background threads. The main thread never blocks on image I/O.
-- **Two-tier cache.** Screen-resolution and full-resolution variants are cached independently with an adaptive memory budget (25% of system RAM, capped at 2 GB).
+- **Two-tier cache.** Screen-resolution and full-resolution variants are cached independently with an adaptive memory budget.
 - **Sliding window preload.** Up to 400 images cached (configurable), split 25% behind and 75% ahead. Navigation feels instant.
 - **Natural filename sort.** `img9` comes before `img10`.
 - **Appearance-aware dock icon.** Automatically switches between light and dark variants based on your system theme.
@@ -18,6 +20,9 @@ Stock macOS Preview loads slowly on large folders. Third-party viewers pull in E
 - **Keyboard-driven.** Arrow keys to navigate, delete to trash, rotate, zoom, copy — all without touching the mouse.
 - **Zero dependencies.** Only system frameworks: Foundation, AppKit, ImageIO, UniformTypeIdentifiers.
 - **Localized.** English, German, French, Japanese, Simplified Chinese.
+
+<img width="975" height="602" alt="image" src="https://github.com/user-attachments/assets/d37ac309-c056-4452-af46-2e82d272a97b" />
+
 
 ## Install
 
